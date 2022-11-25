@@ -81,3 +81,26 @@ const menu = [
     desc: `Red bean paste dessert, serving with honey.`,
   },
 ];
+
+// selectors
+
+let menuList = document.querySelector(".section-center");
+
+
+
+for (meal in menu) {
+  console.log(menu[meal].category);
+  mealDOM = document.createElement("div");
+  mealDOM.classList.add("menu-items", "col-lg-6", "col-sm-12");
+  mealDOM.innerHTML = `<img src="${menu[meal].img}" class="photo""></img>
+                      <div class="menu-info">
+                      <div class="menu-title">
+                      <h4>${menu[meal].title}</h4>
+                      <h4 class="price">${menu[meal].price}</h4>
+                      </div>
+                      <div class"menu-text">${menu[meal].desc}</div>
+                      </div
+                      `;
+  menuList.append(mealDOM);
+}
+
